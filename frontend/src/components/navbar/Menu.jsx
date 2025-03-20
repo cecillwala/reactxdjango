@@ -10,6 +10,8 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
+import {Link, useLocation} from 'react-router';
+
 
 export default function Menu() {
   const [open, setOpen] = React.useState(true);
@@ -17,6 +19,10 @@ export default function Menu() {
   const handleClick = () => {
     setOpen(!open);
   };
+
+  const location = useLocation();
+  const path = location.pathname;
+console.log(path);
 
   return (
     <>
@@ -30,7 +36,7 @@ export default function Menu() {
             </ListSubheader>
         }
         >
-        <ListItemButton onClick={handleClick}>
+        <ListItemButton onClick={handleClick} component={Link} to="/" selected={path === "/"}>
             <ListItemIcon>
             < SportsSoccerIcon />
             </ListItemIcon>
@@ -87,7 +93,7 @@ export default function Menu() {
         </ListSubheader>
       }
     >
-      <ListItemButton onClick={handleClick}>
+      <ListItemButton component={Link} to="/create" selected={path === "/create"}> 
         <ListItemIcon>
           < AddBoxIcon />
         </ListItemIcon>

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "api",
     #corsheaders
     "corsheaders",
+    "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -56,7 +57,7 @@ MIDDLEWARE = [
 
 #Specify which urls are allowed to carry out HTTP requests
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173/"
+    "http://localhost:5173"
 ]
 
 ROOT_URLCONF = "maganji.urls"
